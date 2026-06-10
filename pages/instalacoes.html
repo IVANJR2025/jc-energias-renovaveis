@@ -7,6 +7,20 @@
   <title>Instalações — JC Energia Solar</title>
   <link rel="icon" type="image/jpg" href="../assets/images/logo.jpg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
+  .install-card__title {
+    font-size: var(--text-sm);
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .install-card__desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   <style>
     .gallery-grid {
       display: grid;
@@ -212,7 +226,7 @@
         <div class="install-card">
           <img class="install-card__img" src="../assets/images/img3.jpg" alt="Instalação 3" />
           <div class="install-card__body">
-            <span class="install-card__tag">Comercial</span>
+            <span class="install-card__tag">Residencial</span>
             <h3 class="install-card__title">Sistema Fotovoltaico Comercial</h3>
             <p class="install-card__desc">Dimensionamento personalizado para redução de custos operacionais.</p>
           </div>
@@ -228,7 +242,7 @@
         <div class="install-card">
           <img class="install-card__img" src="../assets/images/img5.jpg" alt="Instalação 5" />
           <div class="install-card__body">
-            <span class="install-card__tag">Comercial</span>
+            <span class="install-card__tag">Residencial</span>
             <h3 class="install-card__title">Sistema Fotovoltaico Comercial</h3>
             <p class="install-card__desc">Projeto técnico completo com homologação e comissionamento.</p>
           </div>
@@ -241,10 +255,10 @@
             <p class="install-card__desc">Manutenção e adequação de sistema existente com análise de perdas.</p>
           </div>
         </div>
-        <div class="install-card" style="grid-column: 2;">
+        <div class="install-card" style="grid-column: 2 / 3;"></div>
           <img class="install-card__img" src="../assets/images/img7.jpg" alt="Instalação 7" />
           <div class="install-card__body">
-            <span class="install-card__tag">Comercial</span>
+            <span class="install-card__tag">Residencial</span>
             <h3 class="install-card__title">Sistema Fotovoltaico Comercial</h3>
             <p class="install-card__desc">Instalação de grande porte com monitoramento e relatórios mensais.</p>
           </div>
