@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sobre a JC Energia Solar — José Carlos, especialista em sistemas fotovoltaicos com foco em pós-venda e performance." />
+  <title>Sobre — JC Energia Solar</title>
+  <link rel="icon" type="image/jpg" href="../assets/images/logo.jpg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    .about-visual {
+      background: var(--color-dark-bg);
+      border: 1px solid var(--color-dark-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-12);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+    .about-stat {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .about-stat__value {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: var(--weight-black);
+      color: var(--color-yellow);
+      min-width: 110px;
+    }
+    .about-stat__label { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.5; }
+    .about-stat__divider { height: 1px; background: var(--color-dark-border); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+    .value-card {
+      background: var(--color-dark-surface);
+      border: 1px solid var(--color-dark-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    .value-card:hover { border-color: var(--color-yellow); box-shadow: var(--shadow-yellow); }
+    .value-card__icon { font-size: 2rem; margin-bottom: var(--space-4); }
+    .value-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: var(--weight-bold);
+      color: #fff;
+      margin-bottom: var(--space-2);
+    }
+    .value-card__text { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
+    .profile-card {
+      max-width: 800px;
+      margin: var(--space-12) auto 0;
+      background: var(--color-light-surface);
+      border: 1px solid var(--color-light-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-12);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+    .profile-avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: var(--color-dark-bg);
+      border: 3px solid var(--color-yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      flex-shrink: 0;
+    }
+    .profile-name {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--weight-bold);
+      margin-bottom: var(--space-1);
+    }
+    .profile-role { font-size: var(--text-sm); color: var(--color-yellow); font-weight: var(--weight-semibold); margin-bottom: var(--space-4); }
+    .profile-bio { font-size: var(--text-base); color: var(--color-text-secondary); line-height: 1.8; }
+    @media (max-width: 768px) {
+      .about-grid   { grid-template-columns: 1fr; }
+      .values-grid  { grid-template-columns: 1fr; }
+      .profile-card { grid-template-columns: 1fr; text-align: center; }
+      .profile-avatar { margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="../index.html" class="navbar__logo">
+        <img src="../assets/images/logo.jpg" alt="JC Energia Solar" />
+      </a>
+      <ul class="navbar__links">
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="instalacoes.html">Instalações</a></li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="../index.html#contacto" class="navbar__cta">Fale Conosco</a></li>
+      </ul>
+      <div class="navbar__toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__eyebrow">Nossa história</span>
+      <h1 class="page-hero__title">Muito além<br>da instalação</h1>
+      <p class="page-hero__subtitle">Nascemos para preencher uma lacuna real do mercado solar: o pós-venda que as outras empresas abandonam.</p>
+    </div>
+  </section>
+
+  <!-- MISSÃO -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="section__eyebrow">Nossa missão</span>
+          <h2 class="section__title">Instalar bem é o mínimo.<br>Permanecer é o diferencial.</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:1.8;margin-bottom:var(--space-4);">O mercado de energia solar cresceu rapidamente no Brasil — e junto com esse crescimento, multiplicaram-se as empresas que chegam, instalam e desaparecem. O cliente fica sozinho diante de dúvidas na conta de energia, quedas de performance que não entende, equipamentos que param de funcionar e ninguém que responda.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:1.8;margin-bottom:var(--space-4);">A JC Energia Solar foi criada exatamente para ser diferente. Acreditamos que a relação com o cliente começa na instalação — mas não termina nela. Cada sistema que entregamos é acompanhado de perto, monitorado e mantido com o mesmo cuidado da primeira visita.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-secondary);line-height:1.8;">Mais do que instalar painéis, somos parceiros energéticos do nosso cliente — explicamos a conta de energia, identificamos cobranças indevidas, interpretamos os dados de performance e estamos sempre disponíveis quando algo não está certo.</p>
+        </div>
+        <div class="about-visual">
+          <div class="about-stat">
+            <span class="about-stat__value">500+</span>
+            <span class="about-stat__label">Sistemas solares instalados e em operação</span>
+          </div>
+          <div class="about-stat__divider"></div>
+          <div class="about-stat">
+            <span class="about-stat__value">15+</span>
+            <span class="about-stat__label">Anos de experiência técnica em energia solar</span>
+          </div>
+          <div class="about-stat__divider"></div>
+          <div class="about-stat">
+            <span class="about-stat__value">100%</span>
+            <span class="about-stat__label">Comprometimento com o pós-venda de cada cliente</span>
+          </div>
+          <div class="about-stat__divider"></div>
+          <div class="about-stat">
+            <span class="about-stat__value">RJ</span>
+            <span class="about-stat__label">Base no Rio de Janeiro com atendimento nacional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O PROBLEMA QUE RESOLVEMOS -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__header" style="max-width:700px;">
+        <span class="section__eyebrow">O que nos move</span>
+        <h2 class="section__title">O pós-venda que o mercado solar esqueceu</h2>
+        <p class="section__subtitle">Existe uma realidade cruel no setor solar brasileiro: a maioria das empresas entrega o sistema, pega o cheque e some. O que fica para o cliente é um equipamento que ele não sabe operar, uma conta de energia que ele não consegue interpretar e um número de telefone que ninguém atende.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__icon">📞</div>
+          <h3 class="value-card__title">Suporte que responde</h3>
+          <p class="value-card__text">Quando você liga ou manda mensagem, alguém atende. Sem chatbot genérico, sem espera eterna — atendimento direto com quem entende do seu sistema.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">🔍</div>
+          <h3 class="value-card__title">Leitura real da conta</h3>
+          <p class="value-card__text">Sabemos interpretar cada linha da sua fatura de energia. Identificamos bandeiras, cobranças indevidas e se o sistema está gerando o que deveria.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">📈</div>
+          <h3 class="value-card__title">Performance monitorada</h3>
+          <p class="value-card__text">Acompanhamos os dados do seu sistema regularmente. Se algo cai abaixo do esperado, identificamos e corrigimos antes que você precise reclamar.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">🛠️</div>
+          <h3 class="value-card__title">Problemas resolvidos</h3>
+          <p class="value-card__text">Temos expertise técnica para diagnosticar e solucionar falhas complexas — aquelas que outras empresas não conseguem nem identificar.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">📚</div>
+          <h3 class="value-card__title">Educação do cliente</h3>
+          <p class="value-card__text">Explicamos como seu sistema funciona, o que os dados significam e como você pode monitorar sua própria geração com segurança.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">🤝</div>
+          <h3 class="value-card__title">Parceria de longo prazo</h3>
+          <p class="value-card__text">Não somos fornecedores pontuais. Somos parceiros energéticos — presentes hoje, amanhã e em cada ano de vida útil do seu sistema.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFIL -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section__header" style="text-align:center;">
+        <span class="section__eyebrow">Quem está por trás</span>
+        <h2 class="section__title">Conheça José Carlos</h2>
+      </div>
+      <div class="profile-card">
+        <div class="profile-avatar">👷</div>
+        <div>
+          <h3 class="profile-name">José Carlos</h3>
+          <p class="profile-role">Consultor e Integrador de Energia Solar Fotovoltaica</p>
+          <p class="profile-bio">
+            Com mais de 15 anos dedicados ao setor elétrico e energético, José Carlos construiu uma trajetória sólida na instalação, monitoramento e análise de sistemas solares fotovoltaicos. Ao longo desse tempo, acumulou centenas de projetos executados — dos mais simples sistemas residenciais às instalações comerciais de maior complexidade técnica.
+          </p>
+          <br />
+          <p class="profile-bio">
+            Sua grande especialidade vai além da instalação: é na fase de operação que José Carlos se diferencia. Com profundo conhecimento em análise de performance, ele identifica problemas que a maioria dos técnicos do mercado simplesmente não vê — módulos com degradação precoce, inversores com falhas intermitentes, perdas de geração causadas por sombreamento ou sujidade que passam despercebidas por anos.
+          </p>
+          <br />
+          <p class="profile-bio">
+            Igualmente importante é sua capacidade de interpretar contas de energia. Em um mercado onde poucos profissionais entendem a fundo as tarifas, bandeiras e cobranças das concessionárias, José Carlos consegue cruzar os dados de geração do sistema com a fatura real do cliente — identificando discrepâncias, cobranças indevidas e oportunidades de otimização que muitos nunca percebem.
+          </p>
+          <br />
+          <p class="profile-bio" style="font-weight:600;color:var(--color-text-primary);">
+            "Instalar é o começo da relação, não o fim. Meu compromisso é que cada cliente que confiar no meu trabalho tenha, anos depois, um sistema funcionando com excelência — e alguém de confiança para ligar quando tiver dúvidas."
+          </p>
+          <div style="display:flex;gap:var(--space-4);margin-top:var(--space-6);flex-wrap:wrap;">
+            <a href="https://wa.me/5521969747177" target="_blank" style="display:flex;align-items:center;gap:6px;font-size:var(--text-sm);color:var(--color-yellow);font-weight:var(--weight-semibold);">💬 WhatsApp: (21) 96974-7177</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-box__title">Vamos conversar sobre o seu projeto?</h2>
+        <p class="cta-box__subtitle">Avaliação gratuita e sem compromisso. José Carlos responde pessoalmente.</p>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;position:relative;">
+          <a href="https://wa.me/5521969747177" target="_blank" class="btn btn--primary">💬 WhatsApp</a>
+          <a href="tel:+5521969747177" class="btn btn--outline">📞 (21) 96974-7177</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../assets/images/logo.jpg" alt="JC Energia Solar" />
+          <p>Especialistas em energia solar fotovoltaica com pós-venda real.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="servicos.html">Instalação Fotovoltaica</a></li>
+            <li><a href="servicos.html">Projetos para Homologação</a></li>
+            <li><a href="servicos.html">Manutenção Preventiva</a></li>
+            <li><a href="servicos.html">Monitoramento</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="instalacoes.html">Instalações</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/5521969747177" target="_blank">💬 WhatsApp</a></li>
+            <li><a href="tel:+5521969747177">📞 (21) 96974-7177</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 JC Energia Solar. Todos os direitos reservados.</span>
+        <span>Desenvolvido por <strong style="color:var(--color-yellow);">BestAI</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

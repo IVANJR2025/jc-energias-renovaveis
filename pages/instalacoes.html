@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Instalações executadas pela JC Energia Solar — projetos residenciais e comerciais com qualidade técnica comprovada." />
+  <title>Instalações — JC Energia Solar</title>
+  <link rel="icon" type="image/jpg" href="../assets/images/logo.jpg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+    .install-card {
+      background: var(--color-light-surface);
+      border: 1px solid var(--color-light-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
+    }
+    .install-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--color-yellow);
+    }
+    .install-card__img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform var(--transition-slow);
+    }
+    .install-card:hover .install-card__img { transform: scale(1.04); }
+    .install-card__body {
+      padding: var(--space-5);
+    }
+    .install-card__tag {
+      display: inline-block;
+      background: var(--color-yellow-glow);
+      color: var(--color-orange);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .install-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: var(--weight-bold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-1);
+    }
+    .install-card__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    #lightbox.active { display: flex; }
+    #lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 0 60px rgba(245,166,35,0.20);
+      object-fit: contain;
+    }
+    #lightbox-close {
+      position: absolute;
+      top: 24px; right: 32px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity var(--transition-fast);
+    }
+    #lightbox-close:hover { opacity: 1; }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+    .stats-bar__item {
+      background: var(--color-dark-surface);
+      border: 1px solid var(--color-dark-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      text-align: center;
+      transition: border-color var(--transition-fast);
+    }
+    .stats-bar__item:hover { border-color: var(--color-yellow); }
+    .stats-bar__value {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl);
+      font-weight: var(--weight-black);
+      color: var(--color-yellow);
+      display: block;
+    }
+    .stats-bar__label { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); }
+
+    @media (max-width: 768px) {
+      .gallery-grid  { grid-template-columns: 1fr 1fr; }
+      .stats-bar     { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid  { grid-template-columns: 1fr; }
+      .stats-bar     { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <span id="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active')">✕</span>
+    <img id="lightbox-img" src="" alt="Instalação ampliada" />
+  </div>
+
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="../index.html" class="navbar__logo">
+        <img src="../assets/images/logo.jpg" alt="JC Energia Solar" />
+      </a>
+      <ul class="navbar__links">
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="instalacoes.html" class="active">Instalações</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="../index.html#contacto" class="navbar__cta">Fale Conosco</a></li>
+      </ul>
+      <div class="navbar__toggle"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__eyebrow">Nosso portfólio</span>
+      <h1 class="page-hero__title">Instalações<br>executadas</h1>
+      <p class="page-hero__subtitle">Cada projeto é uma prova do nosso compromisso com qualidade técnica, segurança e resultados reais para o cliente.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stats-bar__item">
+          <span class="stats-bar__value">500+</span>
+          <span class="stats-bar__label">Sistemas instalados</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__value">15+</span>
+          <span class="stats-bar__label">Anos de experiência</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__value">RJ</span>
+          <span class="stats-bar__label">Base no Rio de Janeiro</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__value">98%</span>
+          <span class="stats-bar__label">Clientes satisfeitos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Portfólio</span>
+        <h2 class="section__title">Projetos realizados</h2>
+        <p class="section__subtitle">Clique nas imagens para ampliar. Cada instalação entregue com qualidade técnica e acompanhamento pós-venda.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="install-card">
+          <img class="install-card__img" src="../assets/images/img1.jpg" alt="Instalação 1" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Residencial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Residencial</h3>
+            <p class="install-card__desc">Instalação completa com comissionamento e monitoramento remoto.</p>
+          </div>
+        </div>
+        <div class="install-card">
+          <img class="install-card__img" src="../assets/images/img2.jpg" alt="Instalação 2" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Residencial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Residencial</h3>
+            <p class="install-card__desc">Projeto, homologação e instalação com suporte pós-venda contínuo.</p>
+          </div>
+        </div>
+        <div class="install-card">
+          <img class="install-card__img" src="../assets/images/img3.jpg" alt="Instalação 3" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Comercial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Comercial</h3>
+            <p class="install-card__desc">Dimensionamento personalizado para redução de custos operacionais.</p>
+          </div>
+        </div>
+        <div class="install-card">
+          <img class="install-card__img" src="../assets/images/img4.jpg" alt="Instalação 4" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Residencial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Residencial</h3>
+            <p class="install-card__desc">Instalação com análise de performance e monitoramento mensal.</p>
+          </div>
+        </div>
+        <div class="install-card">
+          <img class="install-card__img" src="../assets/images/img5.jpg" alt="Instalação 5" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Comercial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Comercial</h3>
+            <p class="install-card__desc">Projeto técnico completo com homologação e comissionamento.</p>
+          </div>
+        </div>
+        <div class="install-card">
+          <img class="install-card__img" src="../assets/images/img6.jpg" alt="Instalação 6" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Residencial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Residencial</h3>
+            <p class="install-card__desc">Manutenção e adequação de sistema existente com análise de perdas.</p>
+          </div>
+        </div>
+        <div class="install-card" style="grid-column: 2;">
+          <img class="install-card__img" src="../assets/images/img7.jpg" alt="Instalação 7" />
+          <div class="install-card__body">
+            <span class="install-card__tag">Comercial</span>
+            <h3 class="install-card__title">Sistema Fotovoltaico Comercial</h3>
+            <p class="install-card__desc">Instalação de grande porte com monitoramento e relatórios mensais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-box__title">Quer o seu projeto aqui também?</h2>
+        <p class="cta-box__subtitle">Fale com José Carlos e receba uma avaliação gratuita para o seu imóvel.</p>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;position:relative;">
+          <a href="https://wa.me/5521969747177" target="_blank" class="btn btn--primary">💬 WhatsApp</a>
+          <a href="tel:+5521969747177" class="btn btn--outline">📞 (21) 96974-7177</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../assets/images/logo.jpg" alt="JC Energia Solar" />
+          <p>Especialistas em energia solar fotovoltaica com pós-venda real.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="servicos.html">Instalação Fotovoltaica</a></li>
+            <li><a href="servicos.html">Projetos para Homologação</a></li>
+            <li><a href="servicos.html">Manutenção Preventiva</a></li>
+            <li><a href="servicos.html">Monitoramento</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="instalacoes.html">Instalações</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://wa.me/5521969747177" target="_blank">💬 WhatsApp</a></li>
+            <li><a href="tel:+5521969747177">📞 (21) 96974-7177</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 JC Energia Solar. Todos os direitos reservados.</span>
+        <span>Desenvolvido por <strong style="color:var(--color-yellow);">BestAI</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
